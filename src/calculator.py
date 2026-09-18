@@ -1,12 +1,35 @@
+import numbers
+
 """ATCS Unit 0 demonstration calculator.
 
 This program is intentionally simple so students can focus on
 professional software-engineering workflow rather than syntax.
 """
 
+a = ""
+b = ""
+while not isinstance(a, numbers.Number):
+    try:
+        a = float(input("Input a number for A: "))
+    except ValueError:
+        continue
+
+while not isinstance(b, numbers.Number):
+    try:
+        b = float(input("Input a number for B: "))
+    except ValueError:
+        continue
+
 def multiply(a, b):
     """Return the product of a and b."""
     return a * b
+
+def divide(a, b):
+    """Return a divided by b"""
+
+    if (b==0):
+        return "Cannot divide by 0"
+    return round(float(a) / b, 4)
 
 def add(a, b):
     """Return the sum of a and b."""
@@ -20,15 +43,10 @@ def subtract(a, b):
 
 def main():
     print("Engineering Calculator")
-    print("5 + 3 =", add(5, 3))
-    print("5 - 3 =", subtract(5, 3))
-    print("5 * 3 =", multiply(5, 3))
-
-    #multiply tests
-    print("0 * 0 =", multiply(0,0))
-    print("-2.5 * -5.5 =", multiply(-2.5,-5.5))
-    print("-5 * 5 =", multiply(-5,5))
-    #add text to these test cases
+    print(a," + ",b," =", add(a, b))
+    print(a," - ",b," =", subtract(a, b))
+    print(a," * ",b," =", multiply(a, b))
+    print(a," / ",b," =", divide(a, b))
 
 if __name__ == "__main__":
     main()
