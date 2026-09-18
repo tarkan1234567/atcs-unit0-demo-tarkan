@@ -20,6 +20,10 @@ while not isinstance(b, numbers.Number):
     except ValueError:
         continue
 
+def power(a, b):
+    """Return the power of a and b."""
+    return a ** b
+
 def multiply(a, b):
     """Return the product of a and b."""
     return a * b
