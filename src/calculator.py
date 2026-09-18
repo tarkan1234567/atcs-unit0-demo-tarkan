@@ -20,10 +20,6 @@ while not isinstance(b, numbers.Number):
     except ValueError:
         continue
 
-def power(a, b):
-    """Returns the power of a and b."""
-    return a ** b
-
 def multiply(a, b):
     """Return the product of a and b."""
     return a * b
@@ -51,7 +47,6 @@ def main():
     print(a," - ",b," =", subtract(a, b))
     print(a," * ",b," =", multiply(a, b))
     print(a," / ",b," =", divide(a, b))
-    print(a," ^ ",b," =", power(a, b))
 
 if __name__ == "__main__":
     main()
